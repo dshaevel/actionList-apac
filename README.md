@@ -1,5 +1,5 @@
-# Action List Amazon Product API Client (apac) - v0.0.1 - David Shaevel
-### 2/18/2015
+# Action List Amazon Product API Client (apac) - v0.0.2 - David Shaevel
+### 2/20/2015
 
 ---
 
@@ -90,9 +90,12 @@ Output:
 
 #Changelog
 
+**v0.0.2** AWS Credentials are read in from the file **awsCredentials.json**
+
 **v0.0.1** Initial check in.
 
 - **NOTE:** AWS Credentials need to be copied into the index.js file.
+
 
 ---
 

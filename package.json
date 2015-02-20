@@ -1,7 +1,7 @@
 {
   "name": "actionList-apac",
   "description": "Action List Amazon Product API Client (apac)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "David Shaevel",
   "repository": {
     "type": "git",
@@ -10,6 +10,7 @@
   "dependencies": {
     "apac": "^1.0.0",
     "body-parser": "^1.10.2",
-    "express": "^4.11.1"
+    "express": "^4.11.1",
+    "jsonfile": "^2.0.0"
   }
 }
