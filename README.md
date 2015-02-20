@@ -94,9 +94,6 @@ Output:
 
 **v0.0.1** Initial check in.
 
-- **NOTE:** AWS Credentials need to be copied into the index.js file.
-
-
 ---
 
 #Acknowledgements
