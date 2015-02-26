@@ -4,7 +4,7 @@ var _file = './awsCredentials.json',
 	_jf = require('jsonfile'),
 	OperationHelper = require('../node_modules/apac/lib/apac').OperationHelper;
 
-function callAmazonProductApi(credentials) {
+function callAmazonProductApi(credentials, keywords) {
 	var opHelper = new OperationHelper({
 		awsId: credentials.awsId,
 		awsSecret: credentials.awsSecret,
@@ -15,7 +15,7 @@ function callAmazonProductApi(credentials) {
 		'ItemSearch',
 		{
 			'SearchIndex': 'All',
-			'Keywords': 'sensodyne',
+			'Keywords': keywords,
 			'ResponseGroup': 'Images,ItemAttributes'
 		},
 		function(error, results) {
@@ -42,7 +42,7 @@ function callAmazonProductApi(credentials) {
 	);
 }
 
-function run() {
+function run(keywords) {
 	console.log('alApac.run()::BEGIN');
 
 	_jf.readFile(_file, function(err, obj) {
@@ -50,7 +50,7 @@ function run() {
 			console.log(err);
 			return;
 		}
-		callAmazonProductApi(obj);
+		callAmazonProductApi(obj, keywords);
 	});
 
 	console.log('alApac.run()::END');

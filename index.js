@@ -4,7 +4,7 @@ var _alApac = require('./app/alApac'),
 	_util = require('util');
 
 var app = _express();
-app.use(_bodyParser.urlencoded({ extended: false }));
+var jsonParser = _bodyParser.json();
 
 app.get('/', function(req, res) {
 	res.send({
@@ -12,11 +12,13 @@ app.get('/', function(req, res) {
 	});
 });
 
-app.post('/doStuff', function(req, res) {
-	_alApac.run();
+app.post('/doStuff', jsonParser, function(req, res) {
+	var keywords = req.body.keywords;
+
+	_alApac.run(keywords);
 
 	res.send({
-		description: 'called alApac.run()'
+		keywords: keywords
 	});
 });
 
